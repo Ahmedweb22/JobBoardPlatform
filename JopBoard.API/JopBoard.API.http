@@ -1,0 +1,6 @@
+@JopBoard.API_HostAddress = http://localhost:5083
+
+GET {{JopBoard.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
