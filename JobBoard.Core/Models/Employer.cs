@@ -4,7 +4,15 @@ using System.Text;
 
 namespace JobBoard.Core.Models
 {
-    internal class Employer
+    public class Employer
     {
+        public int EmployerId { get; set; }
+        public string CompanyName { get; set; } = string.Empty;
+        public string CompanyDescription { get; set; } = string.Empty;
+
+        public string UserId { get; set; } = string.Empty;
+        public User User { get; set; } = null!;
+        public ICollection<Job> Jobs { get; set; } = new List<Job>();
+
     }
 }

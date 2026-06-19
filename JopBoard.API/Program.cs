@@ -1,4 +1,6 @@
 
+using JopBoard.API.Extensions;
+
 namespace JopBoard.API
 {
     public class Program
@@ -8,7 +10,7 @@ namespace JopBoard.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddInfraStructureServices(builder.Configuration);
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
