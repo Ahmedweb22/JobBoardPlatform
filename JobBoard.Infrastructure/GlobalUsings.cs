@@ -6,3 +6,4 @@ global using Microsoft.EntityFrameworkCore;
 global using JobBoard.Core.Models;
 global using JobBoard.Core.Interfaces.IRepositories;
 global using JobBoard.Core.Interfaces.IServices;
+global using JobBoard.Infrastructure.DataAccess;
