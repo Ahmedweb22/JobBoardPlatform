@@ -26,6 +26,7 @@ namespace JobBoard.Infrastructure.DataAccess
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
         }
     }
 }
