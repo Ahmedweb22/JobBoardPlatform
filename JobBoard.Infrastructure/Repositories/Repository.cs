@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace JobBoard.Infrastructure.Repositories
@@ -24,6 +25,16 @@ namespace JobBoard.Infrastructure.Repositories
         public async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _dbSet.ToListAsync();
+        }
+        public async Task<T?> GetOneAsync(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>[]? includes = null, bool tracking = true)
+        {
+            IQueryable<T> query = _dbSet;
+            foreach (var include in includes) 
+            {
+            query = query.Include(include);
+
+            }
+            return await query.FirstOrDefaultAsync(expression);
         }
         public async Task AddAsync(T entity)
         {

@@ -68,8 +68,8 @@ namespace JopBoard.API.Extensions
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IAuthService, AuthService>();
-            //services.AddScoped<IJobService, JobService>();
-            //services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IJobService, JobService>();
+            services.AddScoped<IFileService, FileService>();
             return services;
         }
     }

@@ -20,4 +20,8 @@
     <ProjectReference Include="..\JobBoard.Infrastructure\JobBoard.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Uploads\CVs\" />
+  </ItemGroup>
+
 </Project>
