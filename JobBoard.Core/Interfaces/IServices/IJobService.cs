@@ -9,6 +9,7 @@ namespace JobBoard.Core.Interfaces.IServices
     public interface IJobService
     {
         Task<JobResponse> CreateJobAsync(CreateJobRequest request, string userId);
-        Task<PaginationResult<JobResponse>> GetJobsAsync(int pageNumber, int pageSize, string? location, string? jobTybe, string sortBy);
+        Task<PaginationResult<JobResponse>> GetJobsAsync(int pageNumber, int pageSize, string? location, string? jobTybe, string? sortBy);
+        Task<JobResponse?> GetJobByIdAsync(int id);
     }
 }

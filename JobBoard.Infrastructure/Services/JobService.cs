@@ -48,7 +48,7 @@ namespace JobBoard.Infrastructure.Services
             CompanyName = employer.CompanyName
             };
         }
-        public async Task<PaginationResult<JobResponse>> GetJobsAsync(int pageNumber , int pageSize , string? location , string? jobTybe , string sortBy) 
+        public async Task<PaginationResult<JobResponse>> GetJobsAsync(int pageNumber , int pageSize , string? location , string? jobTybe , string? sortBy) 
         {
             var (items, totalCount) = await _jobRepository.GetJobsAsync(pageNumber, pageSize, location, jobTybe, sortBy);
             var jobDtos = items.Select(j => new JobResponse
