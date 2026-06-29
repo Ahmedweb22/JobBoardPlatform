@@ -52,8 +52,8 @@ namespace JopBoard.API.Extensions
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "https://localhost:7284",
-                    ValidAudience = "https://localhost:7284",
+                    ValidIssuer = configuration["JWT:ValidIssuer"],
+                    ValidAudience = configuration["JWT:ValidAudience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SJF8BMehVmHiC1VpepCM6iTLgRmvOmzwpDltYwMTbaB")),
                     ClockSkew = TimeSpan.Zero
                 };
