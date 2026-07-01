@@ -78,7 +78,7 @@ namespace JobBoard.Infrastructure.Services
                 }
                 return new AuthResponse
                 {
-                    Message = $"Registration failed : {errors}"
+                    Message = $"Registration failed : {string.Join(", ", errors)}"
                 };
             }
 
@@ -90,23 +90,23 @@ namespace JobBoard.Infrastructure.Services
 
             if (request.Role == "Employer")
             {
-                var employer = new Employer
+                var newEmployer = new Employer
                 {
                     UserId = user.Id,
                     CompanyName = request.CompanyName ?? "New Company",
                     CompanyDescription = request.Description ?? string.Empty
                 };
-                await _employer.AddAsync(employer);
+                await _employer.AddAsync(newEmployer);
             }
             else if (request.Role == "Candidate")
             {
-                var candidate = new Candidate
+                var newCandidate = new Candidate
                 {
                     UserId = user.Id,
                     FullName = request.FullName ?? "New Candidate",
                     PhoneNumber = request.PhoneNumber ?? string.Empty
                 };
-                await _candidate.AddAsync(candidate);
+                await _candidate.AddAsync(newCandidate);
 
             }
             await _unitOfWork.CommitAsync();

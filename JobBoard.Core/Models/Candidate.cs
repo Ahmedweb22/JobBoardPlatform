@@ -12,7 +12,6 @@ namespace JobBoard.Core.Models
         public string? CVPath { get; set; }
 
         public string UserId { get; set; } = string.Empty;
-        public User User { get; set; } = null!;
         public ICollection<Application> Applications { get; set; } = new List<Application>();
     }
 }

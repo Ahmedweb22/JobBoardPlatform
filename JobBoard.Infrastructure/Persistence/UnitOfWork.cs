@@ -21,7 +21,7 @@ namespace JobBoard.Infrastructure.Persistence
             }
             catch (Exception ex)
             {
-                Console.WriteLine($" Error:{ex.Message}");
+                Console.WriteLine($" Error:{ex.Message} | Inner Exception: {ex.InnerException?.Message}");
                 return 0;
             }
         }

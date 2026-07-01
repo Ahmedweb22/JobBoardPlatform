@@ -11,12 +11,12 @@ namespace JopBoard.API.Controllers
     [ApiController]
     public class ApplicationsController : ControllerBase
     {
-        private readonly IRepository<Application> _applicationRepository;
+        private readonly IApplicationRepository _applicationRepository;
         private readonly IRepository<Candidate> _candidateRepository;
         private readonly IRepository<Employer> _employerRepository;
 
         private readonly IUnitOfWork _unitOfWork;
-        public ApplicationsController(IRepository<Application> applicationRepository, IRepository<Candidate> candidateRepository, IRepository<Employer> employerRepository, IUnitOfWork unitOfWork)
+        public ApplicationsController(IApplicationRepository applicationRepository, IRepository<Candidate> candidateRepository, IRepository<Employer> employerRepository, IUnitOfWork unitOfWork)
         {
             _applicationRepository = applicationRepository;
             _candidateRepository = candidateRepository;

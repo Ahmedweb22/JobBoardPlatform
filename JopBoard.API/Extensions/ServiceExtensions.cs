@@ -62,8 +62,8 @@ namespace JopBoard.API.Extensions
             services.AddScoped<IRepository<RefreshToken>, Repository<RefreshToken>>();
             services.AddScoped<IRepository<Employer>, Repository<Employer>>();
             services.AddScoped<IRepository<Candidate>, Repository<Candidate>>();
-            services.AddScoped<IRepository<Job>, Repository<Job>>();
-            services.AddScoped<IRepository<Application>, Repository<Application>>();
+            services.AddScoped<IJobRepository, JobRepository>();
+            services.AddScoped<IApplicationRepository, ApplicationRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

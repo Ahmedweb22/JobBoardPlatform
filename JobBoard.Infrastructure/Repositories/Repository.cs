@@ -29,10 +29,16 @@ namespace JobBoard.Infrastructure.Repositories
         public async Task<T?> GetOneAsync(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>[]? includes = null, bool tracking = true)
         {
             IQueryable<T> query = _dbSet;
-            foreach (var include in includes) 
-            {
-            query = query.Include(include);
+            if (!tracking)
+                query = query.AsNoTracking();
 
+            if (includes != null)
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+
+                }
             }
             return await query.FirstOrDefaultAsync(expression);
         }

@@ -32,4 +32,4 @@ namespace JobBoard.Infrastructure.Repositories
         }
     }
     }
-}
+

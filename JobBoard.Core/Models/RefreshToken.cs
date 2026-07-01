@@ -14,6 +14,5 @@ namespace JobBoard.Core.Models
         public bool IsActive => !IsExpired;
 
         public string UserId { get; set; } = string.Empty;
-        public User User { get; set; } = null!; 
     }
 }

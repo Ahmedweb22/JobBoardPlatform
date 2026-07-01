@@ -21,7 +21,7 @@ namespace JobBoard.Infrastructure.DataAccess.Configurations
             builder.HasOne<IdentityUser>()
                 .WithOne()
                 .HasForeignKey<Candidate>(c => c.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

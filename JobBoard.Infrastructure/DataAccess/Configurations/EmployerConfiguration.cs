@@ -19,7 +19,7 @@ namespace JobBoard.Infrastructure.DataAccess.Configurations
             builder.HasOne<IdentityUser>()
                 .WithOne()
                 .HasForeignKey<Employer>(e => e.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

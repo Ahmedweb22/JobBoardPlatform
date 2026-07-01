@@ -16,7 +16,7 @@ namespace JopBoard.API.Controllers
         [HttpPost("Logout")]
         public async Task<IActionResult> Logout([FromBody] LogoutRequest request)
         {
-            var result = await _authService.LogoutAsync(request.RefreshToken);
+            var result = await _authService.LogoutAsync(request);
             return Ok(result);
         }
         [HttpPost("Register")]
